@@ -11,9 +11,9 @@ def predict(img):
     return {labels[i]: float(probs[i]) for i in range(len(labels))}
 
 title = "Basketball player classifier"
-description = "A pet breed classifier trained on the Oxford Pets dataset with fastai. Created as a demo for Gradio and HuggingFace Spaces."
-article="<p style='text-align: center'><a href='https://tmabraham.github.io/blog/gradio_hf_spaces_tutorial' target='_blank'>Blog post</a></p>"
+description = "Basketball player classifier created with Gradio and HuggingFace Spaces."
+
 interpretation='default'
 enable_queue=True
 
-gr.Interface(fn=predict,inputs=gr.inputs.Image(shape=(512, 512)),outputs=gr.outputs.Label(num_top_classes=3),title=title,description=description,article=article,interpretation=interpretation,enable_queue=enable_queue).launch()
+gr.Interface(fn=predict,inputs=gr.inputs.Image(shape=(512, 512)),outputs=gr.outputs.Label(num_top_classes=3),title=title,description=description,interpretation=interpretation,enable_queue=enable_queue).launch()
